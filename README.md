@@ -20,12 +20,17 @@ Untuk kamu yang ingin melihat demo terlebih dahulu:
 * Sesuaikan `data-url` pada `<body>` di index dan dashboard sesuai dengan URL backend (jika kamu meng-hosting sendiri).
 * Sesuaikan juga `data-key` di index dengan access key yang bisa kamu ambil dari dashboard.
 * Jika ingin menggunakan GIF, dapatkan Tenor API key di [developers.google.com/tenor](https://developers.google.com/tenor/guides/quickstart).
-* **Untuk deployment ke Netlify:**
-  - Jalankan `npm install` terlebih dahulu
-  - Jalankan `npm run build:public`
-  - Folder `public` adalah yang akan kamu upload ke Netlify
-  - Setting root directory di Netlify: `public`
-  - Jangan lupa file `.gitignore` harus mengecualikan `node_modules` agar deploy lebih cepat
+* **Untuk deployment ke Netlify (dengan netlify.toml):**
+  - Push semua file ke repository GitHub (termasuk folder `js`, `css`, `assets`, dan `netlify.toml`)
+  - Hubungkan repository dengan Netlify
+  - Netlify akan otomatis menjalankan `npm install && npm run build:public`
+  - Publish directory sudah di-set ke `public` di file `netlify.toml`
+  - Tidak perlu set manual di Netlify dashboard
+* **Alternatif: Manual build sebelum push:**
+  - Jalankan `npm install` di lokal
+  - Jalankan `npm run build:public` di lokal
+  - Push folder `public` ke GitHub
+  - Di Netlify, set publish directory ke `public`
 * Untuk backend self-hosting, lihat penjelasan di bawah, atau gunakan **trial API** secara gratis.
 
 > Undangan ini hanya menggunakan HTML, CSS, dan JavaScript biasa. NPM digunakan agar file JavaScript bisa langsung dieksekusi (bukan bertipe module lagi).
